@@ -2,7 +2,6 @@ import streamlit as st
 
 # Configuração da Página
 st.image("https://ognetborrachas.streamlit.app/~/+/media/80f4d4c0cfe8d56355ba35eb32672dd79addcba85c61db5357db2c4b.jpg", width=200)
-st.title("🛠️ OGNET Resolve")
 
 # Estilização Customizada CORRIGIDA
 st.markdown("""
@@ -80,6 +79,7 @@ with col2:
     st.link_button("Falar com Técnico no WhatsApp", link_whatsapp)
 
 st.caption("OGNET-BORRACHAS Resolve - Facilitando sua instalação.")
+
 
 
 
