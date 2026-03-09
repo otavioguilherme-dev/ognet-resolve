@@ -1,14 +1,11 @@
 import streamlit as st
 
-# Configuração da Página - Nome que aparece na aba do navegador
+# Configuração da Página
 st.set_page_config(page_title="OGNET Resolve", page_icon="✅", layout="centered")
 
-# Estilização Customizada (Opcional - Deixa o site com a cara da marca)
+# Estilização Customizada CORRIGIDA
 st.markdown("""
     <style>
-    .main {
-        background-color: #f8f9fa;
-    }
     .stButton>button {
         width: 100%;
         border-radius: 5px;
@@ -17,7 +14,7 @@ st.markdown("""
         color: white;
     }
     </style>
-    """, unsafe_allow_input=True)
+    """, unsafe_allow_html=True)
 
 # Topo do Site
 st.title("🛠️ OGNET Resolve")
@@ -59,34 +56,18 @@ if tipo_perfil != "Clique para selecionar...":
     st.write("---")
     st.markdown("### 💡 Solução Recomendada:")
 
-    # Lógica de Soluções para ENCAIXE
+    # Lógicas de Solução
     if "maior que a porta" in problema_selecionado:
         st.success("**Técnica dos 4 Cantos:**")
-        st.write("""
-        Não corte a borracha! Ela apenas laceou no transporte. 
-        1. Remova a borracha por completo.
-        2. Encaixe primeiro os **4 ângulos (cantos)** da porta.
-        3. Depois, pressione o centro de cada lateral.
-        4. O 'excesso' sumirá conforme você pressiona do centro para as pontas.
-        """)
+        st.write("Não corte a borracha! Encaixe primeiro os 4 cantos e depois os centros.")
         
     elif "fresta" in problema_selecionado or "amassada" in problema_selecionado:
-        st.warning("**Ajuste Térmico (O Segredo da Vedação):**")
-        st.write("""
-        As borrachas novas precisam de memória térmica para vedar 100%.
-        1. Use um **secador de cabelo** (médio) para aquecer a borracha onde há a fresta.
-        2. Com a borracha morna, feche a porta e puxe-a levemente com os dedos até encostar no metal.
-        3. Mantenha a porta fechada por 2 horas (use uma fita adesiva para manter a pressão se necessário).
-        """)
+        st.warning("**Ajuste Térmico:**")
+        st.write("Use um secador de cabelo para aquecer a borracha e moldá-la até o gabinete.")
 
-    elif "não para dentro da canaleta" in problema_selecionado:
-        st.info("**Limpeza e Verificação:**")
-        st.write("""
-        1. Verifique se há restos da borracha antiga ou gordura no trilho.
-        2. Limpe a canaleta com um pano e álcool.
-        3. Se o trilho estiver aberto (largo), você pode apertar levemente a canaleta com um alicate antes de encaixar.
-        """)
-
+    else:
+        st.info("Siga as instruções padrão de limpeza e pressão para garantir a aderência.")
+        
 # Rodapé de Suporte
 st.write("---")
 col1, col2 = st.columns(2)
@@ -98,4 +79,5 @@ with col2:
     st.link_button("Falar com Técnico no WhatsApp", link_whatsapp)
 
 st.caption("OGNET-BORRACHAS Resolve - Facilitando sua instalação.")
+
 
