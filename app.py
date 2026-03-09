@@ -73,6 +73,7 @@ if tipo_perfil != "Clique para selecionar...":
     # Lógicas de Solução
     if "maior que a porta" in problema_selecionado:
         st.success("**Técnica dos 4 Cantos:**")
+        st.image("4cantos.jpg", caption="Comece sempre pelos cantos")
         st.write("Não corte a borracha! Encaixe primeiro os 4 cantos e depois os centros, em modelos de encaixe é muito comum o cliente instalar um canto e ir esticando a borracha pro outro lado isso faz com que a borracha estique e fique sobrando tanto no comprimento quanto na largura. Caso a sua ja tenha esticado, basta refazer a instalacao colocando os 4 cantos e depois pressionar o centros.")
         
     elif "fresta" in problema_selecionado or "amassada" in problema_selecionado:
@@ -93,6 +94,7 @@ with col2:
     st.link_button("Falar com Técnico no WhatsApp", link_whatsapp)
 
 st.caption("OGNET-BORRACHAS Resolve - Facilitando sua instalação.")
+
 
 
 
