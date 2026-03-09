@@ -94,7 +94,8 @@ with col1:
     st.write("Ainda precisa de ajuda?")
 with col2:
     # Substitua pelo seu número real do WhatsApp
-    link_whatsapp = "https://wa.me/5511999999999?text=Olá! Preciso de ajuda com a instalação de uma borracha OGNET."
+    link_whatsapp = "https://wa.me/5511994251306?text=OGNET BORRACHAS me ajuda a instalar a minha borracha!!!!!"
     st.link_button("Falar com Técnico no WhatsApp", link_whatsapp)
 
-st.caption("OGNET Resolve - Facilitando sua manutenção.")
+st.caption("OGNET-BORRACHAS Resolve - Facilitando sua instalação.")
+
