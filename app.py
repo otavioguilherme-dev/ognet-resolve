@@ -8,12 +8,25 @@ st.set_page_config(page_title="OGNET Resolve", page_icon="✅", layout="centered
 NUMERO_WHATSAPP = "5511994251306"
 MENSAGEM_PADRAO = "Olá! Usei o OGNET Resolve mas ainda preciso de ajuda com minha borracha."
 
-# --- LOGO E BANNER ---
-# Certifique-se de que o arquivo se chama exatamente logo.jpg no GitHub
+# --- LOGO E BANNER CENTRAL ---
+ARQUIVO_LOGO = "LOGO_BANNER.jpg"
+
+# 1. Primeiro CRIAMOS as colunas (Definição)
+# O esquema [1, 4, 1] dá muito mais espaço para a imagem no meio
+col_esq, col_meio, col_dir = st.columns([1, 4, 1])
+
+# 2. Depois USAMOS a coluna criada (Execução)
 with col_meio:
     if os.path.exists(ARQUIVO_LOGO):
-        # Ajuste o número abaixo para aumentar (ex: 600)
-        st.image(ARQUIVO_LOGO, width=500)
+        # Para aumentar o tamanho, usamos width. Tente 500 ou 600.
+        st.image(ARQUIVO_LOGO, width=600)
+    else:
+        st.info("Aguardando upload do arquivo LOGO_BANNER.jpg")
+
+# Títulos centralizados logo abaixo do banner
+st.markdown("<h1 style='text-align: center;'>OGNET Resolve</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center;'>O seu guia interativo para instalação de borrachas</p>", unsafe_allow_html=True)
+st.write("---")
 
 # --- BARRA LATERAL (SIDEBAR) ---
 with st.sidebar:
@@ -128,6 +141,7 @@ if st.session_state.tipo is not None:
     st.write("A solução acima não resolveu seu caso?")
     link_wa = f"https://wa.me/5511994251306?text=OGNET RESOLVE PRECISO DE AJUDA!!!!!"
     st.link_button("🆘 Chamar Técnico no WhatsApp", link_wa)
+
 
 
 
