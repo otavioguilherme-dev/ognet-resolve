@@ -2,8 +2,8 @@ import streamlit as st
 import os
 
 # Configuração da Página
-st.image("LOGO_BANNER.jpg", width=800)
-st.set_page_config(page_title="OGNET Resolve", page_icon="✅", layout="centered")
+st.image("LOGO_BANNER.jpg", width=700)
+st.set_page_config(page_title="Bem Vindo ao OGNET Resolve", page_icon="✅", layout="centered")
 
 # Inicializa a memória da escolha (Session State)
 if 'tipo' not in st.session_state:
@@ -24,7 +24,7 @@ with col1:
     else:
         st.info("📸 Foto: Encaixe")
     
-    if st.button("Selecionar Encaixe", key="btn_encaixe"):
+    if st.button("Modelo Encaixe", key="btn_encaixe"):
         st.session_state.tipo = "Encaixe"
 
 with col2:
@@ -33,7 +33,7 @@ with col2:
     else:
         st.info("📸 Foto: Aba")
         
-    if st.button("Selecionar Aba", key="btn_aba"):
+    if st.button("Modelo Aba", key="btn_aba"):
         st.session_state.tipo = "Aba"
 
 with col3:
@@ -42,7 +42,7 @@ with col3:
     else:
         st.info("📸 Foto: Colado")
         
-    if st.button("Selecionar Colado", key="btn_colado"):
+    if st.button("Modelo Colado", key="btn_colado"):
         st.session_state.tipo = "Colado"
 
 st.write("---")
@@ -106,6 +106,7 @@ st.sidebar.write("---")
 if st.sidebar.button("Reiniciar Guia"):
     st.session_state.tipo = None
     st.rerun()
+
 
 
 
