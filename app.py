@@ -22,13 +22,30 @@ st.subheader("O seu guia interativo para instalação das borrachas")
 st.write("---")
 
 # Passo 1: Identificação do Perfil
-st.markdown("### 1. Qual modelo da borracha da sua geladeira ?")
-tipo_perfil = st.selectbox(
-    "Selecione o tipo de encaixe/fixação:",
-    ["Clique para selecionar...", "Borracha de Encaixe (Canaleta/Pressão)", "Borracha de Aba (Parafuso ou Rebite)", "Borracha Colada / Injetada"]
-)
+st.markdown("### 1. Identifique seu modelo pelo visual:")
 
-if tipo_perfil != "Clique para selecionar...":
+# Cria 3 colunas lado a lado
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.image("encaixe.jpg", caption="Modelo de Encaixe")
+    if st.button("Selecionar Encaixe"):
+        st.session_state.tipo = "Encaixe"
+
+with col2:
+    st.image("aba.jpg", caption="Modelo de Aba")
+    if st.button("Selecionar Aba"):
+        st.session_state.tipo = "Aba"
+
+with col3:
+    st.image("colado.jpg", caption="Modelo Colado")
+    if st.button("Selecionar Colado"):
+        st.session_state.tipo = "Colado"
+
+# Lógica para mostrar as dúvidas após o clique
+if 'tipo' in st.session_state:
+    st.info(f"Você selecionou: Borracha de {st.session_state.tipo}")
+    # Aqui entra o restante do seu código de dúvidas...
     
     # Passo 2: Diagnóstico do Problema
     st.markdown(f"### 2. Qual esta sendo o seu problema ? Ou qual sua duvida na insstalação da {tipo_perfil}?")
@@ -94,6 +111,7 @@ with col2:
     st.link_button("Falar com Técnico no WhatsApp", link_whatsapp)
 
 st.caption("OGNET-BORRACHAS Resolve - Facilitando sua instalação.")
+
 
 
 
