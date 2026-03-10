@@ -22,7 +22,7 @@ col_esq, col_meio, col_dir = st.columns([1, 4, 1])
 with col_meio:
     # Agora o Python já sabe o que é ARQUIVO_LOGO porque definimos no passo 2
     if os.path.exists(ARQUIVO_LOGO):
-        st.image(ARQUIVO_LOGO, width=800) 
+        st.image(ARQUIVO_LOGO, width=1000) 
     else:
         st.info("Aguardando upload do arquivo LOGO_BANNER.jpg")
   
@@ -122,6 +122,7 @@ if st.session_state.tipo is not None:
     st.write("A solução acima não resolveu seu caso?")
     link_wa = f"https://wa.me/5511994251306?text=OGNET RESOLVE PRECISO DE AJUDA!!!!!"
     st.link_button("🆘 Chamar Técnico no WhatsApp", link_wa)
+
 
 
 
