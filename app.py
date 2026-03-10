@@ -1,57 +1,61 @@
 import streamlit as st
+import os
 
 # Configuração da Página
 st.image("LOGO_BANNER.jpg", width=800)
+st.set_page_config(page_title="OGNET Resolve", page_icon="✅", layout="centered")
 
-# Estilização Customizada CORRIGIDA
-st.markdown("""
-    <style>
-    .stButton>button {
-        width: 100%;
-        border-radius: 5px;
-        height: 3em;
-        background-color: #007bff;
-        color: white;
-    }
-    </style>
-    """, unsafe_allow_html=True)
+# Inicializa a memória da escolha (Session State)
+if 'tipo' not in st.session_state:
+    st.session_state.tipo = None
 
-# Topo do Site
 st.title("🛠️ OGNET Resolve")
-st.subheader("O seu guia interativo para instalação das borrachas")
+st.subheader("O seu guia interativo para instalação de borrachas")
 st.write("---")
 
-# Passo 1: Identificação do Perfil
+# 1. Menu Visual de Modelos
 st.markdown("### 1. Identifique seu modelo pelo visual:")
-
-# Cria 3 colunas lado a lado
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.image("encaixe.jpg", caption="Modelo de Encaixe")
-    if st.button("Selecionar Encaixe"):
+    # Verifique se o arquivo existe ou use um link de exemplo se estiver testando
+    if os.path.exists("encaixe.jpg"):
+        st.image("encaixe.jpg", caption="Modelo de Encaixe")
+    else:
+        st.info("📸 Foto: Encaixe")
+    
+    if st.button("Selecionar Encaixe", key="btn_encaixe"):
         st.session_state.tipo = "Encaixe"
 
 with col2:
-    st.image("aba.jpg", caption="Modelo de Aba")
-    if st.button("Selecionar Aba"):
+    if os.path.exists("aba.jpg"):
+        st.image("aba.jpg", caption="Modelo de Aba")
+    else:
+        st.info("📸 Foto: Aba")
+        
+    if st.button("Selecionar Aba", key="btn_aba"):
         st.session_state.tipo = "Aba"
 
 with col3:
-    st.image("colado.jpg", caption="Modelo Colado")
-    if st.button("Selecionar Colado"):
+    if os.path.exists("colado.jpg"):
+        st.image("colado.jpg", caption="Modelo Colado")
+    else:
+        st.info("📸 Foto: Colado")
+        
+    if st.button("Selecionar Colado", key="btn_colado"):
         st.session_state.tipo = "Colado"
 
-# Lógica para mostrar as dúvidas após o clique
-if 'tipo' in st.session_state:
-    st.info(f"Você selecionou: Borracha de {st.session_state.tipo}")
-    # Aqui entra o restante do seu código de dúvidas...
+st.write("---")
+
+# 2. Só mostra as dúvidas SE o cliente escolheu um tipo
+if st.session_state.tipo is not None:
     
-    # Passo 2: Diagnóstico do Problema
-    st.markdown(f"### 2. Qual esta sendo o seu problema ? Ou qual sua duvida na insstalação da {tipo_perfil}?")
+    tipo_selecionado = st.session_state.tipo
+    st.markdown(f"### 2. Qual o problema ou dúvida na instalação da borracha de **{tipo_selecionado}**?")
     
+    # Dicionário de dúvidas atualizado
     opcoes_problema = {
-        "Borracha de Encaixe (Canaleta/Pressão)": [
+        "Encaixe": [
             "A borracha parece ser maior que a porta, ficou sobrando na lateral ou comprimento",
             "A borracha não para dentro da canaleta (fica saindo)",
             "Ficou uma fresta, tem vãos ou aberturas (o ímã não encosta na geladeira)",
@@ -59,7 +63,7 @@ if 'tipo' in st.session_state:
             "A borracha nao pega pressão, a porta nao fica fechada",
             "A porta ficou difícil de fechar"
         ],
-        "Borracha de Aba (Parafuso ou Rebite)": [
+        "Aba": [
             "A borracha está repuxando nos cantos",
             "A porta ficou difícil de fechar ou nao para fechada",
             "A borracha nao tem furos, como montar na porta"
@@ -69,7 +73,7 @@ if 'tipo' in st.session_state:
             "A borracha veio com dobras, amassada ou esta enrugada",
             "A borracha nao pega pressão, a porta nao fica fechada"
         ],
-        "Borracha Colada": [
+        "Colado": [
             "A cola não está aderindo",
             "A borracha está desalinhada"
             "A porta ficou difícil de fechar ou nao para fechada",
@@ -82,35 +86,26 @@ if 'tipo' in st.session_state:
         ]
     }
     
-    problema_selecionado = st.radio("Selecione o sintoma:", opcoes_problema[tipo_perfil])
+    problema = st.radio("Selecione o sintoma:", opcoes_problema[tipo_selecionado])
     
-    st.write("---")
-    st.markdown("### 💡 Solução Recomendada:")
+    st.divider()
+    st.markdown("### 💡 Solução OGNET:")
 
-    # Lógicas de Solução
-    if "maior que a porta" in problema_selecionado:
+    # Exemplo de resposta lógica
+    if "maior que a porta" in problema:
         st.success("**Técnica dos 4 Cantos:**")
-        st.image("4cantos.jpg", caption="Comece sempre pelos cantos")
-        st.write("Não corte a borracha! Encaixe primeiro os 4 cantos e depois os centros, em modelos de encaixe é muito comum o cliente instalar um canto e ir esticando a borracha pro outro lado isso faz com que a borracha estique e fique sobrando tanto no comprimento quanto na largura. Caso a sua ja tenha esticado, basta refazer a instalacao colocando os 4 cantos e depois pressionar o centros.")
+        st.write("Não corte! Encaixe os 4 cantos primeiro e depois empurre o meio para as pontas.")
         
-    elif "fresta" in problema_selecionado or "amassada" in problema_selecionado:
+    
+    elif "fresta" in problema or "amassada" in problema:
         st.warning("**Ajuste Térmico:**")
-        st.write("Use um secador de cabelo para aquecer a borracha e moldá-la até o gabinete.")
+        st.write("Use um secador de cabelo para aquecer e moldar a borracha até encostar no metal.")
 
-    else:
-        st.info("Siga as instruções padrão de limpeza e pressão para garantir a aderência.")
-        
-# Rodapé de Suporte
-st.write("---")
-col1, col2 = st.columns(2)
-with col1:
-    st.write("Ainda precisa de ajuda?")
-with col2:
-    # Substitua pelo seu número real do WhatsApp
-    link_whatsapp = "https://wa.me/5511994251306?text=OGNET BORRACHAS me ajude a instalar a minha borracha!!!!!"
-    st.link_button("Falar com Técnico no WhatsApp", link_whatsapp)
-
-st.caption("OGNET-BORRACHAS Resolve - Facilitando sua instalação.")
+# Rodapé sempre visível
+st.sidebar.write("---")
+if st.sidebar.button("Reiniciar Guia"):
+    st.session_state.tipo = None
+    st.rerun()
 
 
 
