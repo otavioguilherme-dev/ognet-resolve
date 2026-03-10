@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Configuração da Página
-st.image("LOGO_BANNER.jpg", width=500)
+st.image("LOGO_BANNER.jpg", width=800)
 
 # Estilização Customizada CORRIGIDA
 st.markdown("""
@@ -94,6 +94,7 @@ with col2:
     st.link_button("Falar com Técnico no WhatsApp", link_whatsapp)
 
 st.caption("OGNET-BORRACHAS Resolve - Facilitando sua instalação.")
+
 
 
 
