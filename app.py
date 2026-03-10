@@ -2,28 +2,29 @@ import streamlit as st
 import os
 
 # Configuração da Página
-st.image("LOGO_BANNER.jpg", width=700)
-st.set_page_config(page_title="Bem Vindo ao OGNET Resolve", page_icon="✅", layout="centered")
+st.set_page_config(page_title="OGNET Resolve", page_icon="✅", layout="centered")
+
+# --- CONFIGURAÇÕES DO WHATSAPP ---
+NUMERO_WHATSAPP = "5511999999999"  # COLOQUE SEU NÚMERO AQUI (com DDD e sem espaços)
+MENSAGEM_PADRAO = "Olá! Usei o OGNET Resolve mas ainda preciso de ajuda com minha borracha."
 
 # Inicializa a memória da escolha (Session State)
 if 'tipo' not in st.session_state:
     st.session_state.tipo = None
 
 st.title("🛠️ OGNET Resolve")
-st.subheader("O seu guia interativo para instalação das borrachas")
+st.subheader("O seu guia interativo para instalação de borrachas")
 st.write("---")
 
 # 1. Menu Visual de Modelos
-st.markdown("### 1. Identifique o modelo correspondente da sua borracha:")
+st.markdown("### 1. Identifique seu modelo pelo visual:")
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    # Verifique se o arquivo existe ou use um link de exemplo se estiver testando
     if os.path.exists("encaixe.jpg"):
         st.image("encaixe.jpg", caption="Modelo de Encaixe")
     else:
         st.info("📸 Foto: Encaixe")
-    
     if st.button("Modelo Encaixe", key="btn_encaixe"):
         st.session_state.tipo = "Encaixe"
 
@@ -32,7 +33,6 @@ with col2:
         st.image("aba.jpg", caption="Modelo de Aba")
     else:
         st.info("📸 Foto: Aba")
-        
     if st.button("Modelo Aba", key="btn_aba"):
         st.session_state.tipo = "Aba"
 
@@ -41,7 +41,6 @@ with col3:
         st.image("colado.jpg", caption="Modelo Colado")
     else:
         st.info("📸 Foto: Colado")
-        
     if st.button("Modelo Colado", key="btn_colado"):
         st.session_state.tipo = "Colado"
 
@@ -49,11 +48,9 @@ st.write("---")
 
 # 2. Só mostra as dúvidas SE o cliente escolheu um tipo
 if st.session_state.tipo is not None:
-    
     tipo_selecionado = st.session_state.tipo
     st.markdown(f"### 2. Qual o problema ou dúvida na instalação da borracha de **{tipo_selecionado}**?")
-    
-    # Dicionário de dúvidas atualizado
+
     opcoes_problema = {
         "Encaixe": [
             "A borracha parece ser maior que a porta, ficou sobrando na lateral ou comprimento",
@@ -84,6 +81,7 @@ if st.session_state.tipo is not None:
             "A borracha veio com dobras, amassada ou esta enrugada",
             "A borracha nao pega pressão, a porta nao fica fechada"
         ]
+
     }
     
     problema = st.radio("Selecione o sintoma:", opcoes_problema[tipo_selecionado])
@@ -91,24 +89,30 @@ if st.session_state.tipo is not None:
     st.divider()
     st.markdown("### 💡 Solução OGNET:")
 
-    # Exemplo de resposta lógica
     if "maior que a porta" in problema:
         st.success("**Técnica dos 4 Cantos:**")
         st.write("Não corte! Encaixe os 4 cantos primeiro e depois empurre o meio para as pontas.")
-        
     
     elif "fresta" in problema or "amassada" in problema:
         st.warning("**Ajuste Térmico:**")
         st.write("Use um secador de cabelo para aquecer e moldar a borracha até encostar no metal.")
+    
+    # BOTÃO WHATSAPP NO FINAL DA SOLUÇÃO
+    st.write("---")
+    st.write("A solução acima não resolveu seu caso?")
+    link_wa = f"https://wa.me/{NUMERO_WHATSAPP}?text={MENSAGEM_PADRAO}"
+    st.link_button("🆘 Chamar Técnico no WhatsApp", link_wa)
 
-# Rodapé sempre visível
-st.sidebar.write("---")
-if st.sidebar.button("Reiniciar Guia"):
+# --- BARRA LATERAL (SIDEBAR) ---
+st.sidebar.title("Suporte OGNET")
+if st.sidebar.button("🔄 Reiniciar Guia"):
     st.session_state.tipo = None
     st.rerun()
 
-
-
+st.sidebar.write("---")
+st.sidebar.write("Precisa de atendimento humano?")
+link_wa_sidebar = f"https://wa.me/{NUMERO_WHATSAPP}?text={MENSAGEM_PADRAO}"
+st.sidebar.link_button("Falar com Especialista", link_wa_sidebar)
 
 
 
