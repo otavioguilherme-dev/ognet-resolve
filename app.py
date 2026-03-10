@@ -111,8 +111,9 @@ if st.sidebar.button("🔄 Reiniciar Guia"):
 
 st.sidebar.write("---")
 st.sidebar.write("Precisa de atendimento humano?")
-link_wa_sidebar = f"https://wa.me/5511994251306?text={OGNET RESOLVE, PRECISO DE AJUDA!!!}"
+link_wa_sidebar = f"https://wa.me/5511994251306?text=OGNET RESOLVE, PRECISO DE AJUDA!!!"
 st.sidebar.link_button("Falar com Especialista VIA WhatsApp", link_wa_sidebar)
+
 
 
 
