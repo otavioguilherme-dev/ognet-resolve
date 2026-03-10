@@ -10,7 +10,10 @@ MENSAGEM_PADRAO = "Olá! Usei o OGNET Resolve mas ainda preciso de ajuda com min
 
 # --- LOGO E BANNER ---
 # Certifique-se de que o arquivo se chama exatamente logo.jpg no GitHub
-ARQUIVO_LOGO = "LOGO_BANNER.jpg"
+with col_meio:
+    if os.path.exists(ARQUIVO_LOGO):
+        # Ajuste o número abaixo para aumentar (ex: 600)
+        st.image(ARQUIVO_LOGO, width=500)
 
 # --- BARRA LATERAL (SIDEBAR) ---
 with st.sidebar:
@@ -125,6 +128,7 @@ if st.session_state.tipo is not None:
     st.write("A solução acima não resolveu seu caso?")
     link_wa = f"https://wa.me/5511994251306?text=OGNET RESOLVE PRECISO DE AJUDA!!!!!"
     st.link_button("🆘 Chamar Técnico no WhatsApp", link_wa)
+
 
 
 
