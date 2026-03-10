@@ -39,8 +39,8 @@ if tipo_perfil != "Clique para selecionar...":
             "A borracha não para dentro da canaleta (fica saindo)",
             "Ficou uma fresta, tem vãos ou aberturas (o ímã não encosta na geladeira)",
             "A borracha veio com dobras, amassada ou esta enrugada",
-            "A borracha nao pega pressão, a porta nao fica fechada"
-            "A porta ficou difícil de fechar",
+            "A borracha nao pega pressão, a porta nao fica fechada",
+            "A porta ficou difícil de fechar"
         ],
         "Borracha de Aba (Parafuso ou Rebite)": [
             "A borracha está repuxando nos cantos",
@@ -94,6 +94,7 @@ with col2:
     st.link_button("Falar com Técnico no WhatsApp", link_whatsapp)
 
 st.caption("OGNET-BORRACHAS Resolve - Facilitando sua instalação.")
+
 
 
 
