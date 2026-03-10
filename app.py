@@ -2,7 +2,7 @@ import streamlit as st
 import os
 
 # 1. CONFIGURAÇÃO DA PÁGINA (Sempre o primeiro comando Streamlit)
-st.set_page_config(page_title="OGNET Resolve", page_icon="✅", layout="centered")
+st.set_page_config(page_title="Bem vindo a OGNET Resolve", page_icon="✅", layout="centered")
 
 # 2. DEFINIÇÃO DAS VARIÁVEIS (Defina o nome do arquivo AQUI)
 # Isso evita o NameError nas linhas abaixo
@@ -14,7 +14,7 @@ with st.sidebar:
     if os.path.exists(ARQUIVO_LOGO):
         st.image(ARQUIVO_LOGO, use_container_width=True)
     
-    st.title("Suporte OGNET")
+    st.title("FALAR COM SUPORTE OGNET BORRACHAS")
     # ... resto do código da sidebar ...
 
 # 4. CONTEÚDO CENTRAL (BANNER)
@@ -22,7 +22,7 @@ col_esq, col_meio, col_dir = st.columns([1, 4, 1])
 with col_meio:
     # Agora o Python já sabe o que é ARQUIVO_LOGO porque definimos no passo 2
     if os.path.exists(ARQUIVO_LOGO):
-        st.image(ARQUIVO_LOGO, width=600) 
+        st.image(ARQUIVO_LOGO, width=800) 
     else:
         st.info("Aguardando upload do arquivo LOGO_BANNER.jpg")
   
@@ -123,6 +123,7 @@ if st.session_state.tipo is not None:
     st.write("A solução acima não resolveu seu caso?")
     link_wa = f"https://wa.me/5511994251306?text=OGNET RESOLVE PRECISO DE AJUDA!!!!!"
     st.link_button("🆘 Chamar Técnico no WhatsApp", link_wa)
+
 
 
 
