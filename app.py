@@ -10,11 +10,11 @@ if 'tipo' not in st.session_state:
     st.session_state.tipo = None
 
 st.title("🛠️ OGNET Resolve")
-st.subheader("O seu guia interativo para instalação de borrachas")
+st.subheader("O seu guia interativo para instalação das borrachas")
 st.write("---")
 
 # 1. Menu Visual de Modelos
-st.markdown("### 1. Identifique seu modelo pelo visual:")
+st.markdown("### 1. Identifique o modelo correspondente da sua borracha:")
 col1, col2, col3 = st.columns(3)
 
 with col1:
@@ -106,6 +106,7 @@ st.sidebar.write("---")
 if st.sidebar.button("Reiniciar Guia"):
     st.session_state.tipo = None
     st.rerun()
+
 
 
 
