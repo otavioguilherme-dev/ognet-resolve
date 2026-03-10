@@ -31,7 +31,6 @@ with col_meio:
 
     link_wa_sidebar = f"https://wa.me/{NUMERO_WHATSAPP}?text=OGNET%20RESOLVE,%20PRECISO%20DE%20AJUDA!!!"
     st.sidebar.link_button("Falar com Especialista", link_wa_sidebar)
-    st.write("Precisa de atendimento humano?")
 st.markdown("<h1 style='text-align: center;'>OGNET Resolve</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center;'>O seu guia interativo para instalação de borrachas</p>", unsafe_allow_html=True)
 st.write("---")
@@ -123,6 +122,7 @@ if st.session_state.tipo is not None:
     st.write("A solução acima não resolveu seu caso?")
     link_wa = f"https://wa.me/5511994251306?text=OGNET RESOLVE PRECISO DE AJUDA!!!!!"
     st.link_button("🆘 Chamar Técnico no WhatsApp", link_wa)
+
 
 
 
