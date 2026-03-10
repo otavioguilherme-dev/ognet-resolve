@@ -2,7 +2,7 @@ import streamlit as st
 import os
 
 # Configuração da Página
-st.image("logo_banner.jpg.jpg")
+st.image("logo_banner.jpg")
 st.set_page_config(page_title="OGNET Resolve", page_icon="✅", layout="centered")
 
 # --- CONFIGURAÇÕES DO WHATSAPP ---
@@ -114,6 +114,7 @@ st.sidebar.write("---")
 st.sidebar.write("Precisa de atendimento humano?")
 link_wa_sidebar = f"https://wa.me/5511994251306?text=OGNET RESOLVE, PRECISO DE AJUDA!!!"
 st.sidebar.link_button("Falar com Especialista VIA WhatsApp", link_wa_sidebar)
+
 
 
 
