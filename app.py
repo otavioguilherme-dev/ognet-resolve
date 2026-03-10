@@ -5,7 +5,7 @@ import os
 st.set_page_config(page_title="OGNET Resolve", page_icon="✅", layout="centered")
 
 # --- CONFIGURAÇÕES DO WHATSAPP ---
-NUMERO_WHATSAPP = "5511999999999"  # COLOQUE SEU NÚMERO AQUI (com DDD e sem espaços)
+NUMERO_WHATSAPP = "5511994251306"  # COLOQUE SEU NÚMERO AQUI (com DDD e sem espaços)
 MENSAGEM_PADRAO = "Olá! Usei o OGNET Resolve mas ainda preciso de ajuda com minha borracha."
 
 # Inicializa a memória da escolha (Session State)
@@ -111,8 +111,9 @@ if st.sidebar.button("🔄 Reiniciar Guia"):
 
 st.sidebar.write("---")
 st.sidebar.write("Precisa de atendimento humano?")
-link_wa_sidebar = f"https://wa.me/{NUMERO_WHATSAPP}?text={MENSAGEM_PADRAO}"
-st.sidebar.link_button("Falar com Especialista", link_wa_sidebar)
+link_wa_sidebar = f"https://wa.me/5511994251306?text={OGNET RESOLVE, PRECISO DE AJUDA!!!}"
+st.sidebar.link_button("Falar com Especialista VIA WhatsApp", link_wa_sidebar)
+
 
 
 
