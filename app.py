@@ -1,22 +1,28 @@
 import streamlit as st
 import os
 
-# Configuração da Página
+# 1. CONFIGURAÇÃO DA PÁGINA (Sempre o primeiro comando Streamlit)
 st.set_page_config(page_title="OGNET Resolve", page_icon="✅", layout="centered")
 
-# --- CONFIGURAÇÕES DO WHATSAPP ---
+# 2. DEFINIÇÃO DAS VARIÁVEIS (Defina o nome do arquivo AQUI)
+# Isso evita o NameError nas linhas abaixo
+ARQUIVO_LOGO = "LOGO_BANNER.jpg" 
 NUMERO_WHATSAPP = "5511994251306"
-MENSAGEM_PADRAO = "Olá! Usei o OGNET Resolve mas ainda preciso de ajuda com minha borracha."
 
-# 1. Primeiro CRIAMOS as colunas (Definição)
-# O esquema [1, 4, 1] dá muito mais espaço para a imagem no meio
-col_esq, col_meio, col_dir = st.columns([1, 4, 1])
-
-# 2. Depois USAMOS a coluna criada (Execução)
-with col_meio:
+# 3. CONTEÚDO DA BARRA LATERAL (SIDEBAR)
+with st.sidebar:
     if os.path.exists(ARQUIVO_LOGO):
-        # Para aumentar o tamanho, usamos width. Tente 500 ou 600.
-        st.image(ARQUIVO_LOGO, width=800)
+        st.image(ARQUIVO_LOGO, use_container_width=True)
+    
+    st.title("Suporte OGNET")
+    # ... resto do código da sidebar ...
+
+# 4. CONTEÚDO CENTRAL (BANNER)
+col_esq, col_meio, col_dir = st.columns([1, 4, 1])
+with col_meio:
+    # Agora o Python já sabe o que é ARQUIVO_LOGO porque definimos no passo 2
+    if os.path.exists(ARQUIVO_LOGO):
+        st.image(ARQUIVO_LOGO, width=600) 
     else:
         st.info("Aguardando upload do arquivo LOGO_BANNER.jpg")
 
@@ -39,13 +45,6 @@ with st.sidebar:
     st.write("Precisa de atendimento humano?")
     link_wa_sidebar = f"https://wa.me/{NUMERO_WHATSAPP}?text=OGNET%20RESOLVE,%20PRECISO%20DE%20AJUDA!!!"
     st.sidebar.link_button("Falar com Especialista", link_wa_sidebar)
-
-# --- CONTEÚDO CENTRAL ---
-# Centralizando o Logo no topo
-col_esq, col_meio, col_dir = st.columns([1, 2, 1])
-with col_meio:
-    if os.path.exists(ARQUIVO_LOGO):
-        st.image(ARQUIVO_LOGO, use_container_width=True)
 
 st.markdown("<h1 style='text-align: center;'>OGNET Resolve</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center;'>O seu guia interativo para instalação de borrachas</p>", unsafe_allow_html=True)
