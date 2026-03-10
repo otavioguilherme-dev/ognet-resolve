@@ -8,9 +8,6 @@ st.set_page_config(page_title="OGNET Resolve", page_icon="✅", layout="centered
 NUMERO_WHATSAPP = "5511994251306"
 MENSAGEM_PADRAO = "Olá! Usei o OGNET Resolve mas ainda preciso de ajuda com minha borracha."
 
-# --- LOGO E BANNER CENTRAL ---
-ARQUIVO_LOGO = "LOGO_BANNER.jpg"
-
 # 1. Primeiro CRIAMOS as colunas (Definição)
 # O esquema [1, 4, 1] dá muito mais espaço para a imagem no meio
 col_esq, col_meio, col_dir = st.columns([1, 4, 1])
@@ -19,7 +16,7 @@ col_esq, col_meio, col_dir = st.columns([1, 4, 1])
 with col_meio:
     if os.path.exists(ARQUIVO_LOGO):
         # Para aumentar o tamanho, usamos width. Tente 500 ou 600.
-        st.image(ARQUIVO_LOGO, width=600)
+        st.image(ARQUIVO_LOGO, width=800)
     else:
         st.info("Aguardando upload do arquivo LOGO_BANNER.jpg")
 
@@ -141,6 +138,7 @@ if st.session_state.tipo is not None:
     st.write("A solução acima não resolveu seu caso?")
     link_wa = f"https://wa.me/5511994251306?text=OGNET RESOLVE PRECISO DE AJUDA!!!!!"
     st.link_button("🆘 Chamar Técnico no WhatsApp", link_wa)
+
 
 
 
