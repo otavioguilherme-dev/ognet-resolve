@@ -112,8 +112,10 @@ if st.session_state.tipo is not None:
 Seguindo a risca nossas orientações iremos fazer a nova borracha voltar pra medida padrão e assim poderemos reinstalar!",
 
 1 - Desligue a geladeira e inicie o processo de deixar a borracha aberta ao sol por cerca de 1 ou 2 horas, ate ela ficar bem mole(maleável) Caso não tenha sol você pode usar um secador dou soprador de calor ou ainda coloca-la em um balde com agua morna.
-     if os.path.exists("ENCAIXE.jpg"):
-        st.image("ENCAIXE.jpg", caption="Modelo de Encaixe")
+  if os.path.exists("tomada.jpg"):
+            st.image("tomada.jpg", width=500)
+        else:
+            st.info("💡 (Aqui aparecerá a foto do tutorial que você subir no GitHub)")
         
 2 - retirar do sol e colocar no piso frio pra esfriar (com esse processo ela vai dilatar com o calor e no piso frio ela esfria e encolhe, voltando a medida padrão de fabrica, deixar 1 a 3 horas no chão frio).
    if os.path.exists("ENCAIXE.jpg"):
