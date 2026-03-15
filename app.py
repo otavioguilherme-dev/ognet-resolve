@@ -112,10 +112,13 @@ if st.session_state.tipo is not None:
 Seguindo a risca nossas orientações iremos fazer a nova borracha voltar pra medida padrão e assim poderemos reinstalar!",
 
 1 - Desligue a geladeira e inicie o processo de deixar a borracha aberta ao sol por cerca de 1 ou 2 horas, ate ela ficar bem mole(maleável) Caso não tenha sol você pode usar um secador dou soprador de calor ou ainda coloca-la em um balde com agua morna.
-
+      st.image("tomada.jpg", width=1000) 
+       st.image("sol.jpg", width=1000) 
 2 - retirar do sol e colocar no piso frio pra esfriar (com esse processo ela vai dilatar com o calor e no piso frio ela esfria e encolhe, voltando a medida padrão de fabrica, deixar 1 a 3 horas no chão frio).
-
+        st.image("nochao.jpg", width=1000) 
 3 - A instalação deve ser feita SEMPRE encaixando os 4 cantos (os 2 de cima e os 2 baixo) e somente depois de encaixar os CANTOS deve-se pressionar o meio da borracha, isso evita que ela estique e fique de 1 a 2 cm maior. Após encaixar os 4 cantos, iremos fixar o meio da borracha, agora e só ir passando os dedos e ir pressionando a borracha, caso fique alguma “barriga” não se preocupe assim que você religar a geladeira a temperatura baixa vai fazer com que ela se ajuste a porta.
+        st.image("4cantos.jpg", width=1000) 
+                st.image("fixadacomfita.jpg", width=1000) 
 """) 
     
     elif "fresta" in problema or "amassada" in problema or "vãos" in problema:
