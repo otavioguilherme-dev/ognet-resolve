@@ -44,24 +44,24 @@ st.markdown("### 1. Identifique seu modelo pelo visual:")
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    if os.path.exists("encaixe.jpg"):
-        st.image("encaixe.jpg", caption="Modelo de Encaixe")
+    if os.path.exists("ENCAIXE.jpg"):
+        st.image("ENCAIXE.jpg", caption="Modelo de Encaixe")
     else:
         st.info("📸 Foto: Encaixe")
     if st.button("Modelo Encaixe", key="btn_encaixe"):
         st.session_state.tipo = "Encaixe"
 
 with col2:
-    if os.path.exists("aba.jpg"):
-        st.image("aba.jpg", caption="Modelo de Aba")
+    if os.path.exists("PARAFUSADO.jpg"):
+        st.image("PARAFUSADO.jpg", caption="Modelo de Aba")
     else:
         st.info("📸 Foto: Aba")
     if st.button("Modelo Aba", key="btn_aba"):
         st.session_state.tipo = "Aba"
 
 with col3:
-    if os.path.exists("colado.jpg"):
-        st.image("colado.jpg", caption="Modelo Colado")
+    if os.path.exists("INJETADO.jpg"):
+        st.image("INJETADO.jpg", caption="Modelo Colado")
     else:
         st.info("📸 Foto: Colado")
     if st.button("Modelo Colado", key="btn_colado"):
@@ -77,7 +77,7 @@ if st.session_state.tipo is not None:
     # Dicionário corrigido (adicionado vírgulas faltantes)
     opcoes_problema = {
         "Encaixe": [
-            "A borracha parece ser maior que a porta",
+            "A borracha parece ser maior que a porta ou ficou sobrando ?",
             "A borracha não para dentro da canaleta (fica saindo)",
             "Ficou uma fresta, tem vãos ou aberturas",
             "A borracha veio com dobras ou amassada",
@@ -106,7 +106,29 @@ if st.session_state.tipo is not None:
 
     if "maior que a porta" in problema:
         st.success("**Técnica dos 4 Cantos:**")
-        st.write("Não corte! Encaixe os 4 cantos primeiro e depois empurre o meio para as pontas.")
+        st.write("Este erro é muito comum de acontecer, a borracha estica na hora da
+instalação ou quando e removida da caixa, mas fique tranquilo isso não é
+um problema que não possa ser corrigido!
+
+Seguindo a risca nossas orientações iremos fazer a nova borracha voltar
+pra medida padrão e assim poderemos reinstalar!
+
+1 - Desliguea geladeira e inicie o processo de deixar a borracha aberta ao sol por cerca de 1 ou 2 horas, ate ela ficar
+bem mole(maleável) Caso não tenha sol você pode usar um secador dou soprador de calor ou ainda coloca-la em um balde com agua morna.
+
+2 - retirar do sol e colocar no piso frio pra esfriar
+(com esse processo ela vai dilatar com o calor e no piso frio ela esfria e
+encolhe, voltando a medida padrão de fabrica, deixar 1 a 3 horas no chão
+frio).
+
+3 - A instalação deve ser feita SEMPRE encaixando os 4 cantos (os 2 de
+cima e os 2 baixo) e somente depois de encaixar os CANTOS deve-se
+pressionar o meio da borracha, isso evita que ela estique e fique de 1 a 2
+cm maior.
+
+Após encaixar os 4 cantos, iremos fixar o meio da borracha, agora e só ir
+passando os dedos e ir pressionando a borracha, caso fique alguma
+“barriga” não se preocupe assim que você religar a geladeira a temperatura baixa vai fazer com que ela se ajuste a porta.")
         
     
     elif "fresta" in problema or "amassada" in problema or "vãos" in problema:
