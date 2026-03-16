@@ -121,9 +121,9 @@ if st.session_state.tipo is not None:
         até ela ficar bem mole (maleável). Caso não tenha sol, você pode usar um secador, soprador de calor ou 
         ainda colocá-la em um balde com água morna.
         """)
-        if os.path.exists("tomada.jpg"):
+    if os.path.exists("tomada.jpg"):
         st.image("tomada.jpg", caption="Aquecendo a borracha para dar maleabilidade", width=500)
-         if os.path.exists("sol.jpg"):
+    if os.path.exists("sol.jpg"):
             st.image("sol.jpg", caption="Aquecendo a borracha para dar maleabilidade", width=500)
 
         # PASSO 2
@@ -131,7 +131,7 @@ if st.session_state.tipo is not None:
         2 - Retirar do sol e colocar no piso frio para esfriar. Com esse processo ela vai dilatar com o calor e, 
         no piso frio, ela esfria e encolhe, voltando à medida padrão de fábrica (deixe de 1 a 3 horas no chão frio).
         """)
-        if os.path.exists("nochao.jpg"):
+    if os.path.exists("nochao.jpg"):
             st.image("nochao.jpg", caption="Borracha descansando no piso frio para recuperar o tamanho", width=500)
                  
         # PASSO 3
@@ -141,9 +141,9 @@ if st.session_state.tipo is not None:
         de 1 a 2 cm maior. Após encaixar os 4 cantos, iremos fixar o meio da borracha, passando os dedos e 
         pressionando. Caso fique alguma “barriga”, não se preocupe: a temperatura baixa fará com que ela se ajuste.
         """)
-        if os.path.exists("4cantos.jpg"):
+    if os.path.exists("4cantos.jpg"):
             st.image("4cantos.jpg", caption="Encaixe primeiro os cantos, depois o meio", width=500)
-        if os.path.exists("fixadacomfita.jpg"):
+    if os.path.exists("fixadacomfita.jpg"):
             st.image("fixadacomfita.jpg", caption="Encaixe primeiro os cantos, depois o meio", width=500)    
     
     elif "fresta" in problema or "amassada" in problema or "vãos" in problema:
