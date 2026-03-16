@@ -108,7 +108,7 @@ if st.session_state.tipo is not None:
         st.success("**Técnica dos 4 Cantos:**")
         
         # Introdução
-        st.write("""
+    st.write("""
         Este erro é muito comum de acontecer. A borracha estica na hora da instalação ou quando é removida da caixa, 
         mas fique tranquilo, isso não é um problema que não possa ser corrigido!
         
@@ -127,7 +127,7 @@ if st.session_state.tipo is not None:
             st.image("sol.jpg", caption="Aquecendo a borracha para dar maleabilidade", width=500)
 
         # PASSO 2
-        st.write("""
+    st.write("""
         2 - Retirar do sol e colocar no piso frio para esfriar. Com esse processo ela vai dilatar com o calor e, 
         no piso frio, ela esfria e encolhe, voltando à medida padrão de fábrica (deixe de 1 a 3 horas no chão frio).
         """)
@@ -135,7 +135,7 @@ if st.session_state.tipo is not None:
             st.image("nochao.jpg", caption="Borracha descansando no piso frio para recuperar o tamanho", width=500)
                  
         # PASSO 3
-        st.write("""
+    st.write("""
         3 - A instalação deve ser feita SEMPRE encaixando os 4 cantos (os 2 de cima e os 2 de baixo) e somente 
         depois de encaixar os CANTOS deve-se pressionar o meio da borracha. Isso evita que ela estique e fique 
         de 1 a 2 cm maior. Após encaixar os 4 cantos, iremos fixar o meio da borracha, passando os dedos e 
