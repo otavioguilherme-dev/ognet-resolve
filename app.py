@@ -122,7 +122,7 @@ if st.session_state.tipo is not None:
         ainda colocá-la em um balde com água morna.
         """)
     if os.path.exists("tomada.jpg"):
-        st.image("tomada.jpg", caption="Aquecendo a borracha para dar maleabilidade", width=500)
+        st.image("tomada.jpg", caption="desligue a geladeira, isso ajuda na pressão", width=500)
     if os.path.exists("sol.jpg"):
             st.image("sol.jpg", caption="Aquecendo a borracha para dar maleabilidade", width=500)
 
@@ -142,9 +142,9 @@ if st.session_state.tipo is not None:
         pressionando. Caso fique alguma “barriga”, não se preocupe: a temperatura baixa fará com que ela se ajuste.
         """)
     if os.path.exists("4cantos.jpg"):
-            st.image("4cantos.jpg", caption="Encaixe primeiro os cantos, depois o meio", width=500)
+            st.image("4cantos.jpg", caption="Encaixe primeiro os cantos, depois os meios", width=500)
     if os.path.exists("fixadacomfita.jpg"):
-            st.image("fixadacomfita.jpg", caption="Encaixe primeiro os cantos, depois o meio", width=500)    
+            st.image("fixadacomfita.jpg", caption="Lacre a geladeira, repetindo o que a fabrica faz, por pelo menos 12 horas ( uma noite, com a geladeira ligada)", width=500)    
     
     elif "fresta" in problema or "amassada" in problema or "vãos" in problema:
         st.warning("**Ajuste Térmico:**")
@@ -153,7 +153,15 @@ if st.session_state.tipo is not None:
     
     else:
         st.info("Certifique-se de que a superfície esteja limpa e aplique pressão uniforme por toda a extensão.")
-
+# BOTÃO PARA REINICIAR (Coloque logo abaixo da solução e antes do botão do WhatsApp)
+    st.write("---")
+    col_voltar, col_whats = st.columns(2)
+    
+    with col_voltar:
+    if st.button("⬅️ Tentar outro procedimento"):
+    st.session_state.tipo = None
+    st.rerun()
+            
     # BOTÃO WHATSAPP NO FINAL DA SOLUÇÃO
     st.write("---")
     st.write("A solução acima não resolveu seu caso?")
