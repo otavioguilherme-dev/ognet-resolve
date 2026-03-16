@@ -122,9 +122,9 @@ if st.session_state.tipo is not None:
         ainda colocá-la em um balde com água morna.
         """)
     if os.path.exists("tomada.jpg"):
-        st.image("tomada.jpg", caption="desligue a geladeira, isso ajuda na pressão", width=500)
+        st.image("tomada.jpg", caption="desligue a geladeira, isso ajuda na pressão", width=300)
     if os.path.exists("sol.jpg"):
-            st.image("sol.jpg", caption="Aquecendo a borracha para dar maleabilidade", width=500)
+            st.image("sol.jpg", caption="Aquecendo a borracha para dar maleabilidade", width=300)
 
         # PASSO 2
     st.write("""
@@ -132,7 +132,7 @@ if st.session_state.tipo is not None:
         no piso frio, ela esfria e encolhe, voltando à medida padrão de fábrica (deixe de 1 a 3 horas no chão frio).
         """)
     if os.path.exists("nochao.jpg"):
-            st.image("nochao.jpg", caption="Borracha descansando no piso frio para recuperar o tamanho", width=500)
+            st.image("nochao.jpg", caption="Borracha descansando no piso frio para recuperar o tamanho", width=300)
                  
         # PASSO 3
     st.write("""
@@ -142,9 +142,9 @@ if st.session_state.tipo is not None:
         pressionando. Caso fique alguma “barriga”, não se preocupe: a temperatura baixa fará com que ela se ajuste.
         """)
     if os.path.exists("4cantos.jpg"):
-            st.image("4cantos.jpg", caption="Encaixe primeiro os cantos, depois os meios", width=500)
+            st.image("4cantos.jpg", caption="Encaixe primeiro os cantos, depois os meios", width=300)
     if os.path.exists("fixadacomfita.jpg"):
-            st.image("fixadacomfita.jpg", caption="Lacre a geladeira, repetindo o que a fabrica faz, por pelo menos 12 horas ( uma noite, com a geladeira ligada)", width=500)    
+            st.image("fixadacomfita.jpg", caption="Lacre a geladeira, repetindo o que a fabrica faz, por pelo menos 12 horas ( uma noite, com a geladeira ligada)", width=300)    
     
     elif "fresta" in problema or "amassada" in problema or "vãos" in problema:
         st.warning("**Ajuste Térmico:**")
