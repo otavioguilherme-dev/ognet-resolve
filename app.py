@@ -104,7 +104,7 @@ if st.session_state.tipo is not None:
     st.divider()
     st.markdown("### 💡 Solução OGNET:")
 
-  f "maior que a porta" in problema:
+  if "maior que a porta" in problema:
         st.success("**Técnica dos 4 Cantos:**")
         
         # Introdução
