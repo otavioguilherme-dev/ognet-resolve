@@ -116,7 +116,7 @@ if st.session_state.tipo is not None:
         """)
 
         # PASSO 1
-        st.write("""
+    st.write("""
         1 - Desligue a geladeira e inicie o processo de deixar a borracha aberta ao sol por cerca de 1 ou 2 horas, 
         até ela ficar bem mole (maleável). Caso não tenha sol, você pode usar um secador, soprador de calor ou 
         ainda colocá-la em um balde com água morna.
