@@ -153,14 +153,15 @@ if st.session_state.tipo is not None:
     
     else:
         st.info("Certifique-se de que a superfície esteja limpa e aplique pressão uniforme por toda a extensão.")
-# BOTÃO PARA REINICIAR (Coloque logo abaixo da solução e antes do botão do WhatsApp)
+        
+    # BOTÃO PARA REINICIAR (Coloque logo abaixo da solução e antes do botão do WhatsApp)
     st.write("---")
     col_voltar, col_whats = st.columns(2)
-    
-    with col_voltar:
-    if st.button("⬅️ Tentar outro procedimento"):
-    st.session_state.tipo = None
-    st.rerun()
+   with col_voltar:
+        # Linha 161 (O botão precisa de 4 espaços ou 1 TAB para a direita)
+        if st.button("⬅️ Tentar outro procedimento"):
+            st.session_state.tipo = None
+            st.rerun()
             
     # BOTÃO WHATSAPP NO FINAL DA SOLUÇÃO
     st.write("---")
